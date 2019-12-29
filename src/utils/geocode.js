@@ -3,7 +3,8 @@
 const request = require('request');
 
 const geocode = (address, callback) => {
-  const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?types=country&access_token=pk.eyJ1IjoiYXJ0aHVyMjQwNiIsImEiOiJjazQ2OHkwdHUwZWRwM2VsOTRpeWVlZ21nIn0.P7bT5AgtirpRB5kQiVKj6A&limit=1';
+
+  const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=pk.eyJ1IjoiYXJ0aHVyMjQwNiIsImEiOiJjazQ2OHkwdHUwZWRwM2VsOTRpeWVlZ21nIn0.P7bT5AgtirpRB5kQiVKj6A&limit=1&language=en';
   request({ url, json: true }, (error, { body }) => {
     if (error) {
       callback('Unable to connect to location services', undefined);
