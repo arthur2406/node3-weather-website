@@ -50,7 +50,7 @@ app.get('/weather', (req, res) => {
       error: 'You must provide an address'
     });
   }
-  console.log('hehlo');
+
   geocode(req.query.address, (error,  { longitude, latitude, location } = {}) => {
     if (error) {
       return res.send({ error });
